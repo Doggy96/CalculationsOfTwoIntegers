@@ -14,17 +14,21 @@ namespace CalculationsOfTwoIntegers
             //Console.WriteLine($"{x}, {y}");
             Calculator calc = new Calculator(); // default constructor
                                                 //calc.TellMePleaseTheValuesOfTheFields();
-            Console.WriteLine(calc.Add()); // 0
-            Console.WriteLine(calc.Add(1, 2)); // 3
+                                                //Console.WriteLine(calc.Add()); // 0
+                                                //Console.WriteLine(calc.Add(1, 2)); // 3
 
-            Console.WriteLine(calc.Subtract()); // 0
-            Console.WriteLine(calc.Subtract(1, 2)); // -1
+            //Console.WriteLine(calc.Subtract()); // 0
+            //Console.WriteLine(calc.Subtract(1, 2)); // -1
 
-            Console.WriteLine(calc.Multiply()); // 0
-            Console.WriteLine(calc.Multiply(1, 2)); // 2
+            //Console.WriteLine(calc.Multiply()); // 0
+            //Console.WriteLine(calc.Multiply(1, 2)); // 2
 
-            Console.WriteLine(calc.Divide()); // 0
-            Console.WriteLine(calc.Divide(1, 2)); // 0
+            //Console.WriteLine(calc.Divide()); // 0
+            //Console.WriteLine(calc.Divide(1, 2)); // 0
+            //Console.WriteLine(calc.Divide(0, 0)); // 0
+
+            Calculator calc2 = new Calculator(5, 10);
+            Console.WriteLine(calc2.Add());
 
 
 

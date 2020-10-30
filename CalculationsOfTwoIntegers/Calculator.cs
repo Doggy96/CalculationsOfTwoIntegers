@@ -10,24 +10,45 @@ namespace CalculationsOfTwoIntegers
     {
         int x;
         int y;
+        bool isOverloaded = false;
 
         // business logic
         // new Calculator(); <-- x = 0, y = 1 default constructor
         public Calculator()
         {
-            this.x = 0;
-            this.y = 0;
+            isOverloaded = false;
+            //this.x = 0;
+            //this.y = 0;
         }
 
         // new Calculator(10, 20); overloaded constructor
         // new Caclulator(10, 0); <--- do not crash
         public Calculator(int x, int y)
         {
+            isOverloaded = true;
             this.AssignFieldValues(x, y, false);
         }
 
         private void AssignFieldValues(int x, int y, bool useZero)
         {
+            /*
+             * const        values (x,y)     methods   result(add)   result(divide)
+             * A ()           0,0              ()       A1 0 + 0       A2 0 / 1
+             * B ()           0,0              (x, y)   B1 x + y       B2 x / (y = 1)
+             * C (x, y)       x,y              ()       B1 x + y       B2 x / (y = 1)
+             * D (x, y)       x,y              (i,j)    D1 i + j       D2 i / (j = 1)
+             * E (x, y == 0)  x,y              ()       B1 x + y       B2 x / (y = 1)  
+             * 
+             * 
+             * 1st case = A1
+             * 2st case = A2
+             * 3nd case = B1
+             * 4th case = B2
+             * 5th case = D1
+             * 6th case = D2
+             * 
+             */
+
             this.x = x;
             if (y == 0 && useZero)
             {
